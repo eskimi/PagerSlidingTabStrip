@@ -197,7 +197,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 			if (pager.getAdapter() instanceof IconTabProvider) {
 				addIconTab(i, ((IconTabProvider) pager.getAdapter()).getPageIconResId(i));
 			} else {
-				addTextTab(i, pager.getAdapter().getPageTitle(i).toString());
+				addTextTab(i, pager.getAdapter().getPageTitle(i));
 			}
 
 		}
@@ -224,7 +224,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
 	}
 
-	private void addTextTab(final int position, String title) {
+	private void addTextTab(final int position, CharSequence title) {
 
 		TextView tab = new TextView(getContext());
 		tab.setText(title);
